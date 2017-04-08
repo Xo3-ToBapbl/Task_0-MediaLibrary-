@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaLibrary
 {
-    class Program
+    class Demo
     {
         static void Main(string[] args)
         {
