@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace MediaLibrary.Interfaces
 {
-    interface IMedia
-    {    
-    }
     interface ILibrary
     {
         string name { get; set; }

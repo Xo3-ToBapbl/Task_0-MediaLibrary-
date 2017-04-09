@@ -4,98 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MediaLibrary.Interfaces;
+using MediaLibrary.MediaElements;
 
-namespace MediaLibrary.MediaElements
+namespace MediaLibrary.BuilderMediaCollections
 {
-    // Library director
-    class LibDirector
-    {
-        public void Create(CollLibBuilder builder, List<Media> list)
-        {
-            builder.AddPhoto(list);
-            builder.AddMusic(list);
-            builder.AddVideo(list);
-        }
-    }   
-    
-    // Collection library builder
-    abstract class CollLibBuilder
-    {
-        protected CollLib colllib;
-        public CollLib CollLib { get { return colllib; } }
-
-        public abstract void AddPhoto(List<Media> list);
-        public abstract void AddMusic(List<Media> list);
-        public abstract void AddVideo(List<Media> list);
-    }
-    
-    // Concrete library builders
-    class Event : CollLibBuilder, ILibrary
-    {
-        public string name { get; set; }       
-        public Event(string name)
-        {
-            this.name = name;
-            colllib = new CollLib(this.name);                    
-        }
-        public override void AddMusic(List<Media> list)
-        {            
-        }
-        public override void AddPhoto(List<Media> list)
-        {
-            foreach (Media element in list)
-            {
-                if (element is Photo)
-                    colllib.Add(element);
-            }                            
-        }
-        public override void AddVideo(List<Media> list)
-        {
-            foreach (Media element in list)
-            {
-                if (element is Video)
-                    colllib.Add(element);
-            }
-        }
-    }
-    class Disk: CollLibBuilder, ILibrary
+    // Concrete media library builders
+    public sealed class EventBuilder : CollectionLibraryBuilder, ILibrary
     {
         public string name { get; set; }
-        public Disk(string name)
+        public EventBuilder(string name)
         {
             this.name = name;
-            colllib = new CollLib(this.name);            
+            colllib = new CollectionLibrary(this.name);
         }
         public override void AddMusic(List<Media> list)
         {
-            foreach (Media element in list)
-            {
-                if (element is Music)
-                    colllib.Add(element);
-            }
-        }
-        public override void AddPhoto(List<Media> list)
-        {
-            foreach (Media element in list)
-            {
-                if (element is Photo)
-                    colllib.Add(element);
-            }
-        }
-        public override void AddVideo(List<Media> list)
-        {  
-        }
-    }
-    class Serial : CollLibBuilder, ILibrary
-    {
-        public string name { get; set; }
-        public Serial(string name)
-        {
-            this.name = name;
-            colllib = new CollLib(this.name);            
-        }
-        public override void AddMusic(List<Media> list)
-        {            
         }
         public override void AddPhoto(List<Media> list)
         {
@@ -114,19 +37,19 @@ namespace MediaLibrary.MediaElements
             }
         }
     }
-    class Selection: CollLibBuilder, ILibrary
+    public sealed class DiskBuilder : CollectionLibraryBuilder, ILibrary
     {
         public string name { get; set; }
-        public Selection(string name)
+        public DiskBuilder(string name)
         {
             this.name = name;
-            colllib = new CollLib(this.name);            
+            colllib = new CollectionLibrary(this.name);
         }
         public override void AddMusic(List<Media> list)
         {
             foreach (Media element in list)
             {
-                if (element is Music)
+                if (element is MusicTrack)
                     colllib.Add(element);
             }
         }
@@ -142,29 +65,60 @@ namespace MediaLibrary.MediaElements
         {
         }
     }
-    
-    // Product collection library
-    class CollLib: ILibrary
-    {        
-        private List<Media> MediaParts = new List<Media>();
+    public sealed class SerialBuilder : CollectionLibraryBuilder, ILibrary
+    {
         public string name { get; set; }
-
-        public CollLib(string name)
+        public SerialBuilder(string name)
         {
             this.name = name;
+            colllib = new CollectionLibrary(this.name);
         }
-
-        public void Add(Media part)
+        public override void AddMusic(List<Media> list)
         {
-            MediaParts.Add(part);
         }
-        public void ShowParts()
+        public override void AddPhoto(List<Media> list)
         {
-            Console.WriteLine("{0}:", name);
-            foreach (Media part in MediaParts)
-                Console.WriteLine("{0} - {1}", part.MediaObject, part.Name);
-            Console.WriteLine("\n");
+            foreach (Media element in list)
+            {
+                if (element is Photo)
+                    colllib.Add(element);
+            }
+        }
+        public override void AddVideo(List<Media> list)
+        {
+            foreach (Media element in list)
+            {
+                if (element is Video)
+                    colllib.Add(element);
+            }
+        }
+    }
+    public sealed class SelectionBuilder : CollectionLibraryBuilder, ILibrary
+    {
+        public string name { get; set; }
+        public SelectionBuilder(string name)
+        {
+            this.name = name;
+            colllib = new CollectionLibrary(this.name);
+        }
+        public override void AddMusic(List<Media> list)
+        {
+            foreach (Media element in list)
+            {
+                if (element is MusicTrack)
+                    colllib.Add(element);
+            }
+        }
+        public override void AddPhoto(List<Media> list)
+        {
+            foreach (Media element in list)
+            {
+                if (element is Photo)
+                    colllib.Add(element);
+            }
+        }
+        public override void AddVideo(List<Media> list)
+        {
         }
     }
 }
-
