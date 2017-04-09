@@ -9,4 +9,8 @@ namespace MediaLibrary.Interfaces
     interface IMedia
     {    
     }
+    interface ILibrary
+    {
+        string name { get; set; }
+    }
 }

@@ -21,19 +21,19 @@ namespace MediaLibrary.MediaElements
         }
     }
 
-    class Photo : Media
+    sealed class Photo : Media
     {
         public Photo(object obj, string name, string url) : base(obj, name, url)
         {
         }        
     }
-    class Music : Media
+    sealed class Music : Media
     {
         public Music(object obj, string name, string url) : base(obj, name, url)
         {
         }
     }
-    class Video : Media
+    sealed class Video : Media
     {
         public Video(object obj, string name, string url) : base(obj, name, url)
         {
