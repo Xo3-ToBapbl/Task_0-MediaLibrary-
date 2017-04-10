@@ -10,11 +10,9 @@ namespace MediaLibrary.BuilderMediaCollections
     // Library director
     public sealed class LibraryDirector
     {
-        public void Create(CollectionLibraryBuilder builder, List<Media> list)
+        public void Create(CollectionLibraryCreater builder, List<Media> media_element_list)
         {
-            builder.AddPhoto(list);
-            builder.AddMusic(list);
-            builder.AddVideo(list);
+            builder.CreateMediaCollection(media_element_list);            
         }
     }
 }

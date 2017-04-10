@@ -35,25 +35,10 @@ namespace MediaLibrary
             LibraryDirector Library = new LibraryDirector();
 
             //Create event library "Event1" with all media elements
-            CollectionLibraryBuilder Event1;
-            Event1 = new EventBuilder("Event1");
-            Library.Create(Event1, AllMedia);
-            Event1.CollLib.ShowParts();
-
-            //Create event library "Event2" with selective media elements
-            CollectionLibraryBuilder Event2;
-            Event2 = new EventBuilder("Event2");
-            Library.Create(Event2, new List<Media> {photo_1, photo_3, video_track_2 });
-            Event2.CollLib.ShowParts();
-            //Add media elements to "Event2" library
-            Event2.AddPhoto(new List<Media> { photo_2 });
-            Event2.CollLib.ShowParts();
-
-            //Create disk library "Disk1" with selective elements
-            CollectionLibraryBuilder Disk1;
-            Disk1 = new EventBuilder("Disk1");
-            Library.Create(Disk1, new List<Media> { photo_1, photo_3, music_track_1, video_track_2 });//incorrect input
-            Disk1.CollLib.ShowParts();
+            CollectionLibraryCreater EventBuilder;
+            EventBuilder = new EventCreater("Event1");
+            Library.Create(EventBuilder, AllMedia);
+            EventBuilder.CollLib.ShowParts();            
 
             Console.ReadKey();
         }

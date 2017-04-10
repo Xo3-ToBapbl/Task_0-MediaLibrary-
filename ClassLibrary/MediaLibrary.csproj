@@ -40,18 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuilderMediaCollections\CollectionLibraryBuilder.cs" />
-    <Compile Include="BuilderMediaCollections\ConcreteMediaLibraryBuilders.cs" />
-    <Compile Include="BuilderMediaCollections\LibraryDirector.cs" />
-    <Compile Include="Interfaces\IMedia.cs" />
-    <Compile Include="BuilderMediaCollections\ProductCollectionLibrary.cs" />
-    <Compile Include="Interfaces\ILibrary.cs" />
-    <Compile Include="MediaElements\Media.cs" />
-    <Compile Include="MediaElements\MediaElements.cs" />
+    <Compile Include="BuilderMediaCollections\1_CollectionLibraryBuilder.cs" />
+    <Compile Include="BuilderMediaCollections\3_CreateConcreteMediaLibraryCollections.cs" />
+    <Compile Include="BuilderMediaCollections\2_LibraryDirector.cs" />
+    <Compile Include="Interfaces\1_IMedia.cs" />
+    <Compile Include="BuilderMediaCollections\4_ProductCollectionLibrary.cs" />
+    <Compile Include="Interfaces\2_ILibrary.cs" />
+    <Compile Include="MediaCollectedElements\1_Event.cs" />
+    <Compile Include="MediaElements\1_Media.cs" />
+    <Compile Include="MediaElements\2_MediaElements.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MediaCollectedElements\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
