@@ -12,15 +12,23 @@ namespace MediaLibrary.BuilderMediaCollections
     // Concrete media library builders
     public sealed class EventCreater : CollectionLibraryCreater
     {
-        CollectionLibrary collection_library = new CollectionLibrary();                
-        public override CollectionLibrary CreateMediaCollection(List<Media> media_element_list)
+        private List<Media> MediaElementList = new List<Media>();       
+        public override string Name { get; set; }
+        public EventCreater(string name, List<Media> media_element_list)
         {
-            if (media_element_list.All(media_element => media_element is Photo || media_element is Video))
+            Name = name;
+            MediaElementList = media_element_list;
+        }
+
+        CollectionLibrary collection_library = new CollectionLibrary();                
+        public override CollectionLibrary CreateMediaCollection()//List<Media> media_element_list
+        {
+            if (MediaElementList.All(media_element => media_element is Photo || media_element is Video))
             {
-                return new Event(media_element_list);
+                return new Event(Name, MediaElementList);
             }
-            else return null;                            
-            }            
+            else
+                return collection_library;                                             
         }
     }
     //public sealed class DiskBuilder : CollectionLibraryCreater, ILibrary

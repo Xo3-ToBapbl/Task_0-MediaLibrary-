@@ -8,6 +8,6 @@ namespace MediaLibrary.Interfaces
 {
     interface ILibrary
     {
-        string name { get; set; }
+        string Name { get; set; }
     }
 }

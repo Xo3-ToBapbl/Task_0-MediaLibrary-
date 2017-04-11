@@ -10,6 +10,7 @@ namespace MediaLibrary.BuilderMediaCollections
     // Collection library builder
     public abstract class CollectionLibraryCreater
     {
-        public abstract CollectionLibrary CreateMediaCollection(List<Media> list);        
+        public abstract string Name {get; set;}
+        public abstract CollectionLibrary CreateMediaCollection();//List<Media> media_element_list        
     }
 }
