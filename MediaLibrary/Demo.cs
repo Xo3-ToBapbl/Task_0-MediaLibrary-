@@ -38,7 +38,7 @@ namespace MediaLibrary
 
             // Create Second Event Library
             LibraryCreator = new EventCreater
-                ("Second Event Library", new List<Media> { photo_1, photo_2, video_track_2 });
+                ("Second Event Library", new List<Media> { photo_1, photo_2, music_track_2 });
             Library_Director.Create(LibraryCreator);
             CollectionLibrary EventLibrary_2 = LibraryCreator.CreateMediaCollection();
             EventLibrary_2.ShowInfo();

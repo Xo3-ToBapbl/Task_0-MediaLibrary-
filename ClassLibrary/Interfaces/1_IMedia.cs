@@ -8,8 +8,8 @@ namespace MediaLibrary.Interfaces
 {
     interface IMedia
     {
-        object MediaObject { get; set; }
-        string Name { get; set; }
-        string URL { get; set; }
+        object MediaObject { get; }
+        string Name { get; }
+        string URL { get; }
     }
 }
