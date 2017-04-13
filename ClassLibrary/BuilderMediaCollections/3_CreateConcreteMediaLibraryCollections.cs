@@ -19,17 +19,19 @@ namespace MediaLibrary.BuilderMediaCollections
         {
             Name = name;
             MediaElementList = media_element_list;
-        }
-
-        CollectionLibrary collection_library = new CollectionLibrary();                
-        public override CollectionLibrary CreateMediaCollection()
+        }              
+        public override ILibrary CreateMediaCollection()
         {
             if (MediaElementList.All(media_element => media_element is Photo || media_element is Video))
             {
-                return new Event(Name, MediaElementList);
+                return new MediaCollectedElements.Event(Name, MediaElementList);
             }
             else
-                return collection_library;                                             
+            {
+                Console.WriteLine("Your media collection '{0}' is not created.\nReason: Unknow media file.", Name);
+                return null;
+            }
+                                                             
         }
     }
     //public sealed class DiskBuilder : CollectionLibraryCreater, ILibrary

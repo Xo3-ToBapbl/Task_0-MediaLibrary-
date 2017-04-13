@@ -44,7 +44,7 @@
     <Compile Include="BuilderMediaCollections\3_CreateConcreteMediaLibraryCollections.cs" />
     <Compile Include="BuilderMediaCollections\2_LibraryDirector.cs" />
     <Compile Include="Interfaces\1_IMedia.cs" />
-    <Compile Include="BuilderMediaCollections\4_ProductCollectionLibrary.cs" />
+    <Compile Include="BuilderMediaCollections\off_ProductCollectionLibrary.cs" />
     <Compile Include="Interfaces\2_ILibrary.cs" />
     <Compile Include="MediaCollectedElements\1_Event.cs" />
     <Compile Include="MediaElements\1_Media.cs" />

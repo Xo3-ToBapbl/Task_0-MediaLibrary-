@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MediaLibrary.MediaElements;
+using MediaLibrary.Interfaces;
 
 namespace MediaLibrary.BuilderMediaCollections
 {
@@ -11,6 +12,6 @@ namespace MediaLibrary.BuilderMediaCollections
     public abstract class CollectionLibraryCreater
     {
         public abstract string Name {get; set;}
-        public abstract CollectionLibrary CreateMediaCollection();        
+        public abstract ILibrary CreateMediaCollection();        
     }
 }

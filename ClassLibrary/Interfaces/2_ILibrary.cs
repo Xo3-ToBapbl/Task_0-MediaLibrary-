@@ -7,9 +7,11 @@ using MediaLibrary.MediaElements;
 
 namespace MediaLibrary.Interfaces
 {
-    interface ILibrary
+    public interface ILibrary
     {
         string Name { get; }
         ICollection<Media> MediaElementCollection { get; }
+
+        void ShowInfo();
     }
 }

@@ -32,16 +32,19 @@ namespace MediaLibrary
             // Create First Event Library
             CollectionLibraryCreater LibraryCreator = new EventCreater
                 ("First Event Library", new List<Media> { photo_2, video_track_3 });
-            Library_Director.Create(LibraryCreator);
-            CollectionLibrary EventLibrary_1 = LibraryCreator.CreateMediaCollection();
-            EventLibrary_1.ShowInfo();
+            MediaCollectedElements.Event EventLibrary_1 = (MediaCollectedElements.Event)
+                Library_Director.Create(LibraryCreator);
+            if(EventLibrary_1 != null)
+                EventLibrary_1.ShowInfo();
 
             // Create Second Event Library
-            LibraryCreator = new EventCreater
+            CollectionLibraryCreater LibraryCreator1 = new EventCreater
                 ("Second Event Library", new List<Media> { photo_1, photo_2, music_track_2 });
-            Library_Director.Create(LibraryCreator);
-            CollectionLibrary EventLibrary_2 = LibraryCreator.CreateMediaCollection();
-            EventLibrary_2.ShowInfo();
+            MediaCollectedElements.Event EventLibrary_2 = (MediaCollectedElements.Event)
+                Library_Director.Create(LibraryCreator1);
+
+            if (EventLibrary_2 != null)
+                EventLibrary_2.ShowInfo();
 
             Console.ReadKey();
         }
