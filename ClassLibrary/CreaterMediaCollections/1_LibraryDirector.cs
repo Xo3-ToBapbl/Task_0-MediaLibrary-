@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MediaLibrary.MediaElements;
 using MediaLibrary.Interfaces;
 
-namespace MediaLibrary.BuilderMediaCollections
+namespace MediaLibrary.CreaterMediaCollections
 {
     // Library director
     public sealed class LibraryDirector

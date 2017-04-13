@@ -40,15 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuilderMediaCollections\1_CollectionLibraryCreater.cs" />
-    <Compile Include="BuilderMediaCollections\3_CreateConcreteMediaLibraryCollections.cs" />
-    <Compile Include="BuilderMediaCollections\2_LibraryDirector.cs" />
+    <Compile Include="CreaterMediaCollections\0_CollectionLibraryCreater.cs" />
+    <Compile Include="CreaterMediaCollections\2_CreateConcreteMediaLibraryCollections.cs" />
+    <Compile Include="CreaterMediaCollections\1_LibraryDirector.cs" />
     <Compile Include="Interfaces\1_IMedia.cs" />
-    <Compile Include="BuilderMediaCollections\off_ProductCollectionLibrary.cs" />
+    <Compile Include="MediaCollectedElements\0_CollectionLibrary.cs" />
     <Compile Include="Interfaces\2_ILibrary.cs" />
     <Compile Include="MediaCollectedElements\1_Event.cs" />
-    <Compile Include="MediaElements\1_Media.cs" />
-    <Compile Include="MediaElements\2_MediaElements.cs" />
+    <Compile Include="MediaCollectedElements\2_Disk.cs" />
+    <Compile Include="MediaCollectedElements\3_Serial.cs" />
+    <Compile Include="MediaCollectedElements\4_Selection.cs" />
+    <Compile Include="MediaElements\0_Media.cs" />
+    <Compile Include="MediaElements\1_MediaElements.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
