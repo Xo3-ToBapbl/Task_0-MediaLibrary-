@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediaLibrary.Interfaces;
-
-namespace MediaLibrary.MediaElements
+﻿namespace MediaLibrary.MediaElements
 {
     public sealed class Photo : Media
     {

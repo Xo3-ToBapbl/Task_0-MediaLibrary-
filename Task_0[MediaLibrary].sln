@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demonstration", "MediaLibra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaLibrary", "ClassLibrary\MediaLibrary.csproj", "{67FE76AD-D168-4035-BD99-3E8DC47F39C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player\Player.csproj", "{6AA6CC1F-4188-49E3-93F9-FF759176D934}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{67FE76AD-D168-4035-BD99-3E8DC47F39C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67FE76AD-D168-4035-BD99-3E8DC47F39C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67FE76AD-D168-4035-BD99-3E8DC47F39C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AA6CC1F-4188-49E3-93F9-FF759176D934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AA6CC1F-4188-49E3-93F9-FF759176D934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AA6CC1F-4188-49E3-93F9-FF759176D934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AA6CC1F-4188-49E3-93F9-FF759176D934}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MediaLibrary.Interfaces;
 using MediaLibrary.MediaElements;
-using MediaLibrary.MediaCollectedElements;
 
 namespace MediaLibrary.CreaterMediaCollections
 {
-    // Concrete media library builders
-    public sealed class EventCreater : CollectionLibraryCreater
+    // Concrete media library creators
+    public sealed class EventCreator : CollectionLibraryCreater
     {
         private ICollection<Media> MediaElementList;       
         public override string Name { get; set; }
 
-        public EventCreater(string name, ICollection<Media> media_element_list)
+        public EventCreator(string name, ICollection<Media> media_element_list)
         {
             Name = name;
             MediaElementList = media_element_list;
@@ -31,16 +28,15 @@ namespace MediaLibrary.CreaterMediaCollections
                 Console.WriteLine("Your media collection '{0}' is not created.\nReason: Unknow media file.", Name);
                 Console.WriteLine("\n");
                 return null;
-            }
-                                                             
+            }                                                  
         }
     }
-    public sealed class DiskCreater : CollectionLibraryCreater
+    public sealed class DiskCreator : CollectionLibraryCreater
     {
         private ICollection<Media> MediaElementList;
         public override string Name { get; set; }
 
-        public DiskCreater(string name, ICollection<Media> media_element_list)
+        public DiskCreator(string name, ICollection<Media> media_element_list)
         {
             Name = name;
             MediaElementList = media_element_list;
@@ -59,12 +55,12 @@ namespace MediaLibrary.CreaterMediaCollections
             }
         }
     }
-    public sealed class SerialCreater : CollectionLibraryCreater
+    public sealed class SerialCreator : CollectionLibraryCreater
     {
         private ICollection<Media> MediaElementList;
         public override string Name { get; set; }
 
-        public SerialCreater(string name, ICollection<Media> media_element_list)
+        public SerialCreator(string name, ICollection<Media> media_element_list)
         {
             Name = name;
             MediaElementList = media_element_list;
@@ -83,12 +79,12 @@ namespace MediaLibrary.CreaterMediaCollections
             }
         }
     }
-    public sealed class SelectionCreater : CollectionLibraryCreater
+    public sealed class SelectionCreator : CollectionLibraryCreater
     {
         private ICollection<Media> MediaElementList;
         public override string Name { get; set; }
 
-        public SelectionCreater(string name, ICollection<Media> media_element_list)
+        public SelectionCreator(string name, ICollection<Media> media_element_list)
         {
             Name = name;
             MediaElementList = media_element_list;

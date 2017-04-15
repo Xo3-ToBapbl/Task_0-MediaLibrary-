@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MediaLibrary.Interfaces;
 using MediaLibrary.MediaElements;
 
@@ -22,8 +19,8 @@ namespace MediaLibrary.MediaCollectedElements
             }
         }
 
-        public CollectionLibrary() { }
-        public CollectionLibrary(string name, ICollection<Media> media_element_list)
+        private CollectionLibrary() { }
+        protected CollectionLibrary(string name, ICollection<Media> media_element_list)
         {
             Name = name;
             EventMediaCollection = media_element_list;

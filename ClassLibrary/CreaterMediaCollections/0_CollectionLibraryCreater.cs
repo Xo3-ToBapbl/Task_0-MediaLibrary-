@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediaLibrary.MediaElements;
-using MediaLibrary.Interfaces;
+﻿using MediaLibrary.Interfaces;
 
 namespace MediaLibrary.CreaterMediaCollections
 {
-    // Collection library builder
+    // Collection library creator
     public abstract class CollectionLibraryCreater
     {
         public abstract string Name {get; set;}
